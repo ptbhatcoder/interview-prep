@@ -4,4 +4,4 @@
 ##### List of Questions
 Q.no | Question | Time Complexity | Solution
 -----|----------|-----------------|---------
-1| In an array having positive integers, except for one number which occurs odd number of times, all other numbers occur even number of times. Find the number.| O(n) | [q1.py] (www.google.com)
+1| In an array having positive integers, except for one number which occurs odd number of times, all other numbers occur even number of times. Find the number.| O(n) | [q1.py](https://github.com/ptbhatcoder/interview-prep/blob/master/ideserve/website-questions/q1.py)
