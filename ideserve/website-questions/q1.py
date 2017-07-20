@@ -2,7 +2,7 @@
 Question : In an array having positive integers, except for one number which occurs odd number of times, all other numbers occur even number of times. Find the number.
 Link : http://www.ideserve.co.in/learn/find-the-number-which-occurs-odd-number-of-times
 Algorithm : Initialise a temporary variable and xor it with all the elements in the array one by one, the other elements will cancel each other and our candidate remains
-Complexity : O(n)
+Complexity : Time - O(n), Space - O(1)
 Test-inputs : 
 1. empty list : [] --> "empty"
 2. single element : [3] --> the element
@@ -13,21 +13,6 @@ Test-inputs :
 '''
 import unittest
 import random
-# the unit or the method
-def findOddOccuringElement(inputArray):
-	if not len(inputArray):
-		return "empty"
-	runner = 0
-	for elem in inputArray:
-		runner^=elem
-	
-	#now run once more to check if it is genuine or invalid test cases 3,4
-	count = inputArray.count(runner)
-	if count and count&1:
-		# means we have found the right candidate
-		return runner
-	return "invalid"
-		
 
 # the unit tests with test cases
 class findOddOccuringElementTests(unittest.TestCase):
@@ -59,6 +44,23 @@ class findOddOccuringElementTests(unittest.TestCase):
 	def testCase6(self):
 		temp = random.randint(0,1000)
 		self.failUnless(findOddOccuringElement([temp,4,4,4,4,5,temp,5,5,5,6,6,6,6,6,6,temp])==temp)
+		
+# the unit or the method which runs the algorithm
+def findOddOccuringElement(inputArray):
+	if not len(inputArray):
+		return "empty"
+	runner = 0
+	
+	#we know that the xor function follows the property that a^a = 0 and hence all even frequency elements cancel each other
+	for elem in inputArray:
+		runner^=elem
+	
+	#now run once more to check if it is genuine or invalid test cases 3,4
+	count = inputArray.count(runner)
+	if count and count&1:
+		# means we have found the right candidate
+		return runner
+	return "invalid"
 	
 if __name__ == '__main__':
 	unittest.main()
