@@ -1,6 +1,6 @@
 
 ## Questions from ideserve.co.in with their solutions
-#### The solutions contains unit tests with the appropriate test cases as well, along with the algorithm
+#### The solutions contains unit tests with the appropriate test cases as well, along with the algorithm. Commentss are given in the necessary places.
 
 ##### List of Questions
 Q.no | Question | Time Complexity | Space Complexity | Solution
